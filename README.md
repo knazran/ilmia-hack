@@ -6,7 +6,7 @@ Pre-installation: Make sure you have a Python 3 environment with virtualenv inst
 2. `cd my_venv_name`
 3. Activate it: `source bin/activate` (POSIX), `.\Scripts\activate` (Windows)
 4. `mkdir src`
-5. `cd src` and and clone this repo into it (`git clone https://github.com/ckz8780/django_bs4_starter_template.git .`)
+5. `cd src` and and clone this repo into it (`git clone git@github.com:knazran/ilmia-hack.git .`)
 6. `pip install -r requirements.txt` (may require `sudo` opn POSIX systems)
 
 ### Start the server
