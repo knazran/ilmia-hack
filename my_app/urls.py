@@ -22,4 +22,6 @@ urlpatterns = [
     path('', views.home, name="home"),
     path('survey/', views.survey, name="survey"),
     path('results/', views.results, name="results"),
+    path('skillgap/', views.skillgap, name="skillgap"),
+    path('mentors/', views.mentors, name="mentors"),
 ]
