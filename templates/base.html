@@ -12,6 +12,7 @@
 	    {% block corecss %}
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 	    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+		<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 	    {% endblock %}
 
 	    {% block extracss %}
@@ -35,16 +36,16 @@
 		{% include "mainnav.html" %}
 		{% endblock %}
 
-		<section id="core" class="container-fluid">
-			<div class="container">
+		<section id="core" class="">
+			<div class="">
 				{% block core %}
 				{% endblock %}
 			</div>
 		</section>
 
-		{% block footer %}
+		{% comment %} {% block footer %}
 		{% include "footer.html" %}
-		{% endblock %}
+		{% endblock %} {% endcomment %}
 
 		{% block postloadjs %}
 		{% endblock %}

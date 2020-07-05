@@ -5,12 +5,12 @@ def home(request):
     template = 'home.html'
     return render(request, template, context)
 
-def about(request):
+def survey(request):
     context = {}
-    template = 'about.html'
+    template = 'survey.html'
     return render(request, template, context)
 
-def contact(request):
+def results(request):
     context = {}
-    template = 'contact.html'
+    template = 'results.html'
     return render(request, template, context)
