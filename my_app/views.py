@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from my_app.forms import SurveyFormStepOne, SurveyFormStepTwo
+from my_app.forms import SurveyFormStepOne, SurveyFormStepTwo, SurveyFormStepThree
 from formtools.wizard.views import SessionWizardView
 
 def home(request):
@@ -29,7 +29,7 @@ def mentors(request):
 
 class FormWizardView(SessionWizardView):
     template_name = "survey.html"
-    form_list = [SurveyFormStepOne, SurveyFormStepTwo]
+    form_list = [SurveyFormStepOne, SurveyFormStepTwo, SurveyFormStepThree]
     def done(self, form_list, **kwargs):
         return render(self.request, 'results.html', {
             'form_data': [form.cleaned_data for form in form_list],
