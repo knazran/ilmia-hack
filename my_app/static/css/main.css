@@ -1,45 +1,76 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i");
 
 /*--------------------------------------------- Sitewide Styling*/
 
 body {
-	font-family: 'Roboto', sans-serif;
-	margin-top: 56px;
+  font-family: "Roboto", sans-serif;
+  margin-top: 56px;
 }
 
 /*--------------------------------------------- Nav Styling*/
 
 nav {
-	background-color: #0d3450;
+  background-color: #0d3450;
 }
 
 .fixed-top {
-	box-shadow: 0px 0px 6px #0d3450;
+  box-shadow: 0px 0px 6px #0d3450;
 }
-
 
 /*--------------------------------------------- Core Section Styling*/
 
 #core {
-	min-height: calc(100vh - 76px);
-	background-color: #ffffff;
+  min-height: calc(100vh - 76px);
+  background-color: #ffffff;
 }
-
 
 /*--------------------------------------------- Footer Styling*/
 
 footer {
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	background-color: #0d3450;
-	color: #fff;
-	box-shadow: 0px 0px 6px #0d3450;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #0d3450;
+  color: #fff;
+  box-shadow: 0px 0px 6px #0d3450;
 }
 
 footer .footer-col {
-	padding: 10px 0;
-	margin: auto;
-	max-height: 76px;
+  padding: 10px 0;
+  margin: auto;
+  max-height: 76px;
+}
+
+/*--------------------------------------------- Homepage Styling*/
+#homeVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.bg-content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+#homeBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#homeBtn:hover {
+  background: #ddd;
+  color: black;
 }
