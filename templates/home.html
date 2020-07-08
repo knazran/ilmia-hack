@@ -5,38 +5,18 @@
 {% endblock %}
 
 {% block core %}
-<!-- <div class="container py-8 h-full">
-	<div class="flex flex-col justify-between">
-		<p class="text-4xl text-center text-bold text-blue-800">Know where you stand in your career</p>
+<div class="container py-8 h-full">
+	<video autoplay muted loop id="homeVideo">
+		{% load static %}
+		<source src="{% static 'asset/bg_video.mp4' %}" type="video/mp4">
+		Your browser does not support HTML5 video.
+	</video>
+	<div class="bg-content flex flex-col justify-between">
+		<img class="logo" src="{% static 'asset/logo2.png' %}">
+		<p class="text-4xl text-center text-bold text-white-800">Know where you stand in your career</p>
 		<a class="w-full my-12 mx-auto flex items-center" href="{% url 'survey' %}">
-			<button class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2">Discover now</button>
+			<button class="home-btn text-white rounded-full text-md mx-auto w-2/3 py-2">Discover now</button>
 		</a>
 	</div>
-</div> -->
-<video autoplay muted loop id="homeVideo">
-	{% load static %}
-	<source src="{% static 'asset/bg_video.mp4' %}" type="video/mp4">
-	Your browser does not support HTML5 video.
-  </video>
-  
-  <div class="bg-content">
-	<h1>Heading</h1>
-	<p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
-	<button id="homeBtn" onclick="myFunction()">Pause</button>
-  </div>
-
-  <script>
-	var video = document.getElementById("homeVideo");
-	var btn = document.getElementById("homeBtn");
-	
-	function myFunction() {
-	  if (video.paused) {
-		video.play();
-		btn.innerHTML = "Pause";
-	  } else {
-		video.pause();
-		btn.innerHTML = "Play";
-	  }
-	}
-	</script>
+</div>
 {% endblock %}
