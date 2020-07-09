@@ -8,9 +8,28 @@
 <div class="container py-8 h-full">
 	<div class="flex flex-col justify-between">
 		<p class="text-4xl text-center text-bold text-blue-800">Take the survey</p>
+		<p>Step {{ wizard.steps.step1 }} of {{ wizard.steps.count }}</p>
+		<form action="" method="post">
+		{% csrf_token %}
+		<table>
+		{{ wizard.management_form }}
+		{% if wizard.form.forms %}
+			{{ wizard.form.management_form }}
+			{% for form in wizard.form.forms %}
+			{{ form }}
+			{% endfor %}
+		{% else %}
+			{{ wizard.form }}
+		{% endif %}
+		</table>
+		{% if wizard.steps.prev %}
+		<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.first }}">first step</button>
+		<button name="wizard_goto_step" type="submit" value="{{ wizard.steps.prev }}">prev step</button>
+		{% endif %}
 		<a class="w-full my-12 mx-auto flex items-center" href="{% url 'results' %}">
-			<button class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2">Submit</button>
+			<input class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2" type="submit" value="submit"/>
 		</a>
+		</form>
 	</div>
 </div>
 {% endblock %}
