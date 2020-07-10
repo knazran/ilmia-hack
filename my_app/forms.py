@@ -6,7 +6,7 @@ css_class = "form-control appearance-none w-full bg-gray-200 border border-gray-
 
 
 class SurveyFormStepOne(forms.Form):
-    course_of_study = forms.ChoiceField(label="Course of Study", widget=forms.Select(
+    course_of_study = forms.ChoiceField(label=False, widget=forms.Select(
         attrs={'class': css_class }))
     # course_of_study = forms.CharField(max_length=100)
 
@@ -18,7 +18,7 @@ class SurveyFormStepOne(forms.Form):
 
 class SurveyFormStepTwo(forms.Form):
     # university = forms.CharField(max_length=100)
-    university = forms.ChoiceField(label="University", widget=forms.Select(
+    university = forms.ChoiceField(label=False, widget=forms.Select(
         attrs={'class': css_class }))
 
     def __init__(self, *args, **kwargs):
@@ -29,7 +29,7 @@ class SurveyFormStepTwo(forms.Form):
 
 class SurveyFormStepThree(forms.Form):
     # current_location = forms.CharField(max_length=100)
-    current_location = forms.ChoiceField(label="Current Location", widget=forms.Select(
+    current_location = forms.ChoiceField(label=False, widget=forms.Select(
         attrs={'class': css_class }))
 
     def __init__(self, *args, **kwargs):
