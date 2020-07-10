@@ -21,6 +21,7 @@ def survey(request):
     return render(request, template, context)
 
 def results(request):
+    print(request.body)
     context = {}
     template = 'results.html'
     return render(request, template, context)
