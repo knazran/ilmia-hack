@@ -12,11 +12,16 @@ def home(request):
     return render(request, template, context)
 
 def survey(request):
-    context = {}
+    context = {
+        'form1' : SurveyFormStepOne,
+        'form2' : SurveyFormStepTwo,
+        'form3' : SurveyFormStepThree
+    }
     template = 'survey.html'
     return render(request, template, context)
 
 def results(request):
+    print(request.body)
     context = {}
     template = 'results.html'
     return render(request, template, context)
