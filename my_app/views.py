@@ -2,6 +2,7 @@ from django.shortcuts import render
 from my_app.forms import SurveyFormStepOne, SurveyFormStepTwo, SurveyFormStepThree
 from formtools.wizard.views import SessionWizardView
 import pandas as pd
+import json
 
 # Global context to read data into pandas
 # df_tracer = pd.read_csv('my_app/static/data/2_job_vacancy.csv')
@@ -21,8 +22,17 @@ def survey(request):
     return render(request, template, context)
 
 def results(request):
-    print(request.body)
-    context = {}
+    # json_data = json.loads(request.body)
+    form = SurveyFormStepOne(request.POST) # A form bound to the POST data
+    if form.is_valid():
+        print(form.cleaned_data['course_of_study'])
+        course = form.cleaned_data['course_of_study']
+    context = {
+        "course": course,
+        "average_salary": 3000
+        # "university": json_data["university"],
+        # "location": json_data["location"],
+    }
     template = 'results.html'
     return render(request, template, context)
 
