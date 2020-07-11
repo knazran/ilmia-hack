@@ -1,84 +1,105 @@
 {% extends "base.html" %} {% block title %}
 <title>Contact</title>
 {% endblock %} {% block core %}
+
+{{salary_data | json_script:"salary_data"}}
 <div class="container py-8 h-full">
   <div class="flex flex-col justify-between">
-    <div class="my-4">
-      <p class="text-lg text-semibold text-black">
-        Average Salary for {{course}}
-      </p>
-      <p class="text-2xl text-bold text-black">
-        RM {{average_salary}} per month
-      </p>
-	</div>
-	<div class="my-4">
-		<p class="text-lg text-semibold text-black">
-		  Salary Range of your peers
-		</p>
-		<canvas class="w-full h-64" id="myChart"></canvas>
-	  </div>
     <div>
       <p class="text-4xl text-center text-bold text-blue-800">
         Here is your results!
       </p>
+    </div>
+    <div class="my-4">
+      <p class="text-lg text-semibold text-black">
+        Average Salary for {{course}} graduates
+      </p>
+      <p class="text-2xl text-bold text-black">
+        RM {{average_salary}} per month
+      </p>
+    </div>
+    <div class="my-4">
+      <p class="text-lg text-semibold text-black">
+        Salary Range of your peers
+      </p>
+      <canvas class="w-full h-64" id="salaryChart"></canvas>
+    </div>
+    <div class="my-4">
+      <p class="text-lg text-semibold text-black">
+        Average time to secure a job after graduation
+      </p>
+      <p class="text-2xl text-bold text-black">
+        RM {{average_salary}} per month
+      </p>
       <canvas class="w-full h-64" id="myChart"></canvas>
     </div>
-
-    <a
-      class="w-full my-12 mx-auto flex items-center"
-      href="{% url 'skillgap' %}"
-    >
-      <button
-        class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2"
+    <div>
+      <a
+        class="w-full my-12 mx-auto flex items-center"
+        href="{% url 'skillgap' %}"
       >
-        Find out more
-      </button>
-    </a>
+        <button
+          class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2"
+        >
+          Find out more
+        </button>
+      </a>
+    </div>
   </div>
-</div>
 
-<script>
-  var ctx = document.getElementById('myChart').getContext('2d');
-  console.log(ctx);
-  var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-      labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-      datasets: [
-        {
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-            'rgba(75, 192, 192, 0.2)',
-            'rgba(153, 102, 255, 0.2)',
-            'rgba(255, 159, 64, 0.2)',
-          ],
-          borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-            'rgba(75, 192, 192, 1)',
-            'rgba(153, 102, 255, 1)',
-            'rgba(255, 159, 64, 1)',
-          ],
-          borderWidth: 1,
-        },
-      ],
-    },
-    options: {
-      scales: {
-        yAxes: [
+  <script>
+    var ctx = document.getElementById('myChart').getContext('2d');
+    console.log(ctx);
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [
           {
-            ticks: {
-              beginAtZero: true,
-            },
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+              'rgba(255, 99, 132, 0.2)',
+              'rgba(54, 162, 235, 0.2)',
+              'rgba(255, 206, 86, 0.2)',
+              'rgba(75, 192, 192, 0.2)',
+              'rgba(153, 102, 255, 0.2)',
+              'rgba(255, 159, 64, 0.2)',
+            ],
+            borderColor: [
+              'rgba(255, 99, 132, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)',
+              'rgba(255, 159, 64, 1)',
+            ],
+            borderWidth: 1,
           },
         ],
       },
-    },
-  });
-</script>
-{% endblock %}
+      options: {
+        scales: {
+          yAxes: [
+            {
+              ticks: {
+                beginAtZero: true,
+              },
+            },
+          ],
+        },
+      },
+    });
+
+	const salary_json = JSON.parse($('#salary_data').html());
+	salary_json.map((salary)=>(console.log(salary)))
+	console.log(salary_json)
+	// console.log(Object.keys(salary_json))
+    var myDoughnutChart = new Chart(ctx, {
+      type: 'doughnut',
+      data: data,
+      options: options,
+    });
+  </script>
+  {% endblock %}
+</div>
