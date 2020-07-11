@@ -5,11 +5,38 @@
 {% endblock %}
 
 {% block core %}
-<div class="container py-8 h-full">
+<div class=" theme-background"></div>
+<div class="container p-8 h-full position">
 	<div class="flex flex-col justify-between">
-		<p class="text-4xl text-center text-bold text-blue-800">These are the skills you'll need</p>
+		<div class="page-title">Skills Gap</div>
+		<div class="page-desc">Common skill gap for tech industry.</div>	
+		<div class="text-center">
+			<lottie-player src="https://assets8.lottiefiles.com/temp/lf20_MySSqG.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>
+		</div>
+		<div>
+		<button class="rectangle-skill truncate">User and entity big data analytics:<span class="font-bold">85%</span></button>
+		<button class="rectangle-skill truncate">App- and web-enabled market:<span class="font-bold">75%</span></button>
+		<button class="rectangle-skill truncate">Internet of things:<span class="font-bold">75%</span></button>
+		<button class="rectangle-skill truncate">Machine learning:<span class="font-bold">73%</span></button>
+		<button class="rectangle-skill truncate">Cloud computing:<span class="font-bold">72%</span></button>
+		<button class="rectangle-skill truncate">Digital trade:<span class="font-bold">59%</span></button>
+		<button class="rectangle-skill truncate">Augmented and virtual reality:<span class="font-bold">58%</span></button>
+		<button class="rectangle-skill truncate">Encryption:<span class="font-bold">54%</span></button>
+		<button class="rectangle-skill truncate">New materials:<span class="font-bold">52%</span></button>
+		<button class="rectangle-skill truncate">Wearables electronics:<span class="font-bold">46%</span></button>
+		<button class="rectangle-skill truncate">Distributed ledger (blockchain):<span class="font-bold">45%</span></button>
+		<button class="rectangle-skill truncate">3D printing:<span class="font-bold">41%</span></button>
+		<button class="rectangle-skill truncate">Autonomous transport:<span class="font-bold">40%</span></button>
+		<button class="rectangle-skill truncate">Stationary robots:<span class="font-bold">37%</span></button>
+		<button class="rectangle-skill truncate">Quantum computing:<span class="font-bold">36%</span></button>
+		<button class="rectangle-skill truncate">Non-humanoid land robots:<span class="font-bold">33%</span></button>
+		<button class="rectangle-skill truncate">Biotechnology:<span class="font-bold">28%</span></button>
+		<button class="rectangle-skill truncate">Humanoid robots:<span class="font-bold">23%</span></button>
+		<button class="rectangle-skill truncate">Aerial and underwater robots:<span class="font-bold">19%</span></button>
+	</div>
+		<!-- https://www.cmswire.com/digital-workplace/understanding-the-tech-skills-gap/ -->
 		<a class="w-full my-12 mx-auto flex items-center" href="{% url 'mentors' %}">
-			<button class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2">Connect with a Mentor</button>
+			<button class="home-btn shadow-dreamy text-white rounded-full text-md mx-auto w-2/3 py-2">Connect with future you</button>
 		</a>
 	</div>
 </div>
