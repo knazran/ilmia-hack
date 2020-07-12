@@ -1,9 +1,13 @@
 {% extends "base.html" %} {% block title %}
 <title>Survey</title>
 {% endblock %} {% block core %}
-<div class="container py-8 h-full">
+<div class=" theme-background"></div>
+<div class="container h-full position" style="padding: 0;">
+	<div class="m-6">
+		<div class="page-title">Survey</div>
+	<div class="page-desc">Answer below questions to check your future career.</div>
+	</div>
   <div class="flex flex-col justify-between">
-	<p class="text-4xl text-center text-bold text-blue-800">Take the survey</p>
 	<form action="{% url 'results' %}" method="post">
 	{% csrf_token %}
     <div
@@ -23,9 +27,9 @@
       <!-- The slideshow -->
       <div class="carousel-inner">
         <div class="carousel-item active">
-          <img src="https://picsum.photos/350/600" />
-          <div class="carousel-caption">
-			<p class="text-lg font-semibold">What did you study?</p>
+			<lottie-player src="https://assets3.lottiefiles.com/packages/lf20_HpFqiS.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>
+          <div class="survey-caption survey-margin">
+			<p class="text-lg font-semibold">What course did you study?</p>
             <!-- <input
               class="bg-gray-500 text-black text-center rounded text-md w-full py-2"
               placeholder="Course"
@@ -34,8 +38,8 @@
           </div>
         </div>
         <div class="carousel-item">
-		  <img src="https://picsum.photos/350/600"/>
-		  <div class="carousel-caption">
+			<lottie-player src="https://assets8.lottiefiles.com/private_files/lf30_cyQ8b1.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>
+		  <div class="survey-caption survey-margin">
 			<p class="text-lg font-semibold">Which university did you go to?</p>
             <!-- <input
               class="bg-gray-500 text-black text-center rounded text-md w-full py-2"
@@ -45,8 +49,8 @@
           </div>
         </div>
         <div class="carousel-item">
-		  <img src="https://picsum.photos/350/600" />
-		  <div class="carousel-caption">Where are you located now?</p>
+			<lottie-player src="https://assets6.lottiefiles.com/temp/lf20_JvT50n.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px; margin: auto;"  loop  autoplay></lottie-player>
+		  <div class="survey-caption survey-margin">Where do you intend to work?</p>
             <!-- <input
               class="bg-gray-500 text-black text-center rounded text-md w-full py-2"
               placeholder="location"
@@ -57,23 +61,23 @@
         </div>
       </div>
       <a
-        class="next w-full mx-auto flex items-center my-4 fixed bottom-4"
+        class="next w-full mx-auto flex items-center my-4 position-absolute bottom-4"
         href="#demo"
         data-slide="next"
       >
         <button
-          class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2"
+          class="home-btn shadow-dreamy text-white rounded-full text-md mx-auto w-2/3 p-2 survey-margin"
 		  type="submit" 
         >
           Next
         </button>
 	  </a>
 	  <a
-		class="submit w-full mx-auto flex items-center my-4 fixed bottom-4"
+		class="submit w-full mx-auto flex items-center my-4 position-absolute bottom-4"
 		style="display:none"
       >
         <button
-          class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2"
+          class="home-btn shadow-dreamy text-white rounded-full text-md mx-auto w-2/3 p-2 survey-margin"
 		  type="submit" 
         >
           Submit
