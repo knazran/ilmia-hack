@@ -5,12 +5,102 @@
 {% endblock %}
 
 {% block core %}
-<div class="container py-8 h-full">
+<div class="top-gradient">
+	<div class="m-6">
+		<div class="page-title">Mentors</div>
+		<div class="page-desc">There are a few reputable people that have made great deal of contribution to Malaysia tech industry.</div>
+	</div>
+	<div class="container h-full" style="padding: 0;">
+		<div class="content-bg flex flex-col justify-between p-6">
+			<div>
+				<button class="top-filter selected-filter-text">All</button>
+				<button class="top-filter filter-text">CTOs</button>
+				<button class="top-filter filter-text">Data Scientist</button>
+				<br>
+				<div class="label-text">LinkedIn's Mentors</div>
+			</div>
+			<a href="https://www.linkedin.com/in/sivan-umapathy-6ba34921/">
+				<div class="mentor-list">
+					{% load static %}
+					<img class="profile-pic" src="{% static 'asset/sivan.jpeg' %}">
+					<div class="block-with-text">
+						<div class="mentor-name">Sivan Umapathy</div>
+						<div class="mentor-title">Chief Information Officer at Telekom Malaysia</div>
+						<div class="mentor-line"></div>
+						<div class="mentor-desc">Career Objective: A challenging Executive IT Leadership position in a Dynamic, Multinational environment, where IT is a strong partner of the business and the leading edge, driving the business forward.</div>
+					</div>		
+				</div>
+			</a>
+			<a href="https://www.linkedin.com/in/malick-aboobakar/">
+				<div class="mentor-list">
+					{% load static %}
+					<img class="profile-pic" src="{% static 'asset/malick.jpeg' %}">
+					<div class="block-with-text">
+						<div class="mentor-name">Malick A.</div>
+						<div class="mentor-title">Chief Information Officer at MDEC</div>
+						<div class="mentor-line"></div>
+						<div class="mentor-desc">Since 2016, Malick has been attached to the Malaysia Digital Economy Corporation (MDEC), an agency under the Ministry of Communications and Multimedia Malaysia, championing Malaysia’s digital economy agenda.</div>
+					</div>	
+				</div>
+			</a>
+			<a href="https://www.linkedin.com/in/arzumy/">
+				<div class="mentor-list">
+					{% load static %}
+					<img class="profile-pic" src="{% static 'asset/arzumy.jpeg' %}">
+					<div class="block-with-text">
+						<div class="mentor-name">Arzumy MD</div>
+						<div class="mentor-title">CTO at Fave & Billplz</div>
+						<div class="mentor-line"></div>
+						<div class="mentor-desc">Arzumy is prolific CTO with over 14 years of experience. He has led engineering teams in a wide range of industries from 020, Fitness, Fintech, and e-Commerce to Digital Media and Mobile Communication.</div>
+					</div>
+				</div>
+			</a>
+			<a href="https://www.linkedin.com/in/drhanlau/">
+				<div class="mentor-list">
+					{% load static %}
+					<img class="profile-pic" src="{% static 'asset/drlau.jpeg' %}">
+					<div class="block-with-text">
+						<div class="mentor-name">Dr. Cher Han Lau</div>
+						<div class="mentor-title">Chief Data Scientist</div>
+						<div class="mentor-line"></div>
+						<div class="mentor-desc">I am a chief data scientist, and currently the CEO of LEAD, an institution that provides programs on data science, full stack web development, and digital marketing.</div>
+					</div>
+				</div>
+			</a>
+			<a href="https://www.linkedin.com/in/exiang/">
+				<div class="mentor-list">
+					{% load static %}
+					<img class="profile-pic" src="{% static 'asset/yeesiang.jpeg' %}">
+					<div class="block-with-text">
+						<div class="mentor-name">Yee Siang Tan</div>
+						<div class="mentor-title">Senior Manager Tech Lead at MaGIC</div>
+						<div class="mentor-line"></div>
+						<div class="mentor-desc">I am a maker that takes whatever required to build a successful product. I may be building faster alone but I can only go further with a great team.</div>
+					</div>
+				</div>
+			</a>
+			<a href="https://www.linkedin.com/in/karlng/">
+				<div class="mentor-list">
+					{% load static %}
+					<img class="profile-pic" src="{% static 'asset/drkarl.jpeg' %}">
+					<div class="block-with-text">
+						<div class="mentor-name">Dr. Karl Ng</div>
+						<div class="mentor-title">Director at MDEC</div>
+						<div class="mentor-line"></div>
+						<div class="mentor-desc">Chartered and Professional Engineer as well as Certified Project Management Professional (PMP) with bachelor degree in engineering and postgraduate degrees (MBA and DBA) in business.</div>
+					</div>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+		
+<!-- <div class="container py-8 h-full">	
 	<div class="flex flex-col justify-between">
 		<p class="text-4xl text-center text-bold text-blue-800">Here's the list of mentors</p>
 		<a class="w-full my-12 mx-auto flex items-center" href="{% url 'home' %}">
 			<button class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2">Go back to home</button>
 		</a>
 	</div>
-</div>
+</div> -->
 {% endblock %}
