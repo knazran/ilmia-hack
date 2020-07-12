@@ -8,6 +8,11 @@ nec1_course =['Social Sciences, Business and Law', 'Health and Welfare',
        'Sciences, Mathematics and Computing', 'Education',
        'Arts and Humanities', 'Services', 'Agriculture and Veterinary',
        'General Programmes']
+states = ['Wilayah Persekutuan Kuala Lumpur', 'Sabah',
+       'Wilayah Persekutuan Labuan', 'Selangor', 'Sarawak', 'Kelantan',
+       'Johor', 'Perak', 'Terengganu', 'Kedah', 'Pulau Pinang',
+       'Negeri Sembilan', 'Luar Negara', 'Melaka', 'Pahang',
+       'Wilayah Persekutuan Putrajaya', 'Perlis']
 
 class SurveyFormStepOne(forms.Form):
     course_of_study = forms.ChoiceField(label=False, widget=forms.Select(
@@ -40,5 +45,4 @@ class SurveyFormStepThree(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(SurveyFormStepThree, self).__init__(*args, **kwargs)
-        self.fields['current_location'].choices = [
-            ('Kuala Lumpur', 'Kuala Lumpur'), ('Kelantan', 'Kelantan')]
+        self.fields['current_location'].choices = [(item, item) for item in states]

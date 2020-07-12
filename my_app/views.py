@@ -37,12 +37,21 @@ def survey(request):
 # };
 def results(request):
     # json_data = json.loads(request.body)
-    form = SurveyFormStepOne(request.POST)  # A form bound to the POST data
-    if form.is_valid():
-        print(form.cleaned_data['course_of_study'])
-        course = form.cleaned_data['course_of_study']
-
-        df_fresh_grad = df_tracer.query("nec1_desc=='{}' & age < 25".format(course))
+    form1 = SurveyFormStepOne(request.POST)  # A form bound to the POST data
+    form3 = SurveyFormStepThree(request.POST)
+    if form1.is_valid() and form3.is_valid():
+        print(form1.cleaned_data['course_of_study'])
+        course = form1.cleaned_data['course_of_study']
+        location = form3.cleaned_data['current_location']
+        
+        if course == 'Computer Science':
+            df_fresh_grad = df_tracer.query("nec3_desc=='Computer science' & age < 25 & working_state=='{}'".format(location))
+            print('Computer sc')
+        elif course == 'Economics':
+            df_fresh_grad = df_tracer.query("nec2_desc=='Economics' & age < 25 & working_state=='{}'".format(location))
+        else:
+            df_fresh_grad = df_tracer.query("nec1_desc=='{}' & age < 25 & working_state=='{}'".format(course, location))
+            print('asdasda sc')
 
         salary_data = df_fresh_grad['monthly_income']\
             .value_counts(1).round(3)
@@ -54,6 +63,8 @@ def results(request):
         }
         top_5_industries_labels = list(df_fresh_grad['msic1'].value_counts(1)[:5].keys())
         top_5_industries_values = list(df_fresh_grad['msic1'].value_counts(1).round(3)[:5].values * 100)
+
+        time_to_get_work = df_fresh_grad['time_to_obtain_work'].value_counts(1)[[0]].to_dict()
         
     context = {
         "course": course,
@@ -61,6 +72,8 @@ def results(request):
         "salary_chart_payload": salary_chart_payload,
         "top_5_industries_labels": top_5_industries_labels,
         "top_5_industries_values": top_5_industries_values,
+        "location": location,
+        "time_to_get_work": time_to_get_work
         # "university": json_data["university"],
         # "location": json_data["location"],
     }
