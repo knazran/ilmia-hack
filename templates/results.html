@@ -10,10 +10,13 @@
     </div>
     <div class="my-4">
       <p class="text-lg text-semibold text-black">
-        Average Salary for {{course}} graduates
+        For {{course}} graduates in {{location}}
       </p>
-      <p class="text-2xl text-bold text-black">
-        RM {{average_salary}} per month
+      <p class="mt-2 text-2xl text-bold text-black">
+		{% for key, values in salary_range.items %}
+		{{ values|stringformat:"d%%" }} earn {{key}} per month
+		{% endfor %}
+        <!-- RM {{average_salary}} per month -->
       </p>
     </div>
     <div class="my-4">

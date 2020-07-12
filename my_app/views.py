@@ -40,7 +40,6 @@ def results(request):
     form1 = SurveyFormStepOne(request.POST)  # A form bound to the POST data
     form3 = SurveyFormStepThree(request.POST)
     if form1.is_valid() and form3.is_valid():
-        print(form1.cleaned_data['course_of_study'])
         course = form1.cleaned_data['course_of_study']
         location = form3.cleaned_data['current_location']
         
@@ -65,17 +64,17 @@ def results(request):
         top_5_industries_values = list(df_fresh_grad['msic1'].value_counts(1).round(3)[:5].values * 100)
 
         time_to_get_work = df_fresh_grad['time_to_obtain_work'].value_counts(1)[[0]].to_dict()
+        salary_range = (df_fresh_grad['monthly_income'].value_counts(1)*100)[[0]].to_dict()
         
     context = {
         "course": course,
         "average_salary": 3000,
         "salary_chart_payload": salary_chart_payload,
+        "salary_range": salary_range,
         "top_5_industries_labels": top_5_industries_labels,
         "top_5_industries_values": top_5_industries_values,
         "location": location,
         "time_to_get_work": time_to_get_work
-        # "university": json_data["university"],
-        # "location": json_data["location"],
     }
     template = 'results.html'
     return render(request, template, context)
