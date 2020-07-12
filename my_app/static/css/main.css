@@ -3,7 +3,7 @@
 /*--------------------------------------------- Sitewide Styling*/
 
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "InterUI", sans-serif;
   margin-top: 56px;
 }
 
@@ -67,13 +67,62 @@ footer .footer-col {
   --bg-opacity: 1;
   background-color: #38b553;
   background-color: rgba(56, 181, 83, var(--bg-opacity));
+  width: -webkit-fill-available !important;
 }
 
 .logo {
-  width: inherit;
+  width: 250px;
+  height: 250px;
+  margin: auto;
 }
 
 /*--------------------------------------------- General Styling*/
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-Thin-slnt=0.ttf) format("truetype");
+  font-weight: 100;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-ExtraLight-slnt=0.ttf) format("truetype");
+  font-weight: 200;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-Light-slnt=0.ttf) format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-Regular-slnt=0.ttf) format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-Medium-slnt=0.ttf) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-SemiBold-slnt=0.ttf) format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-Bold-slnt=0.ttf) format("truetype");
+  font-weight: bold;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-ExtraBold-slnt=0.ttf) format("truetype");
+  font-weight: 800;
+}
+@font-face {
+  font-family: InterUI;
+  src: url(../asset/Inter-Black-slnt=0.ttf) format("truetype");
+  font-weight: 900;
+}
+
 .mobile-screen {
   position: fixed;
   bottom: 0;
@@ -115,7 +164,6 @@ footer .footer-col {
   width: fit-content;
   font-family: InterUI;
   font-size: 14px;
-  font-weight: 600;
   font-stretch: normal;
   font-style: normal;
   line-height: normal;
@@ -131,7 +179,7 @@ footer .footer-col {
 }
 
 .page-title {
-  font-family: Lato;
+  font-family: InterUI;
   font-size: 28px;
   font-weight: bold;
   font-stretch: normal;
@@ -143,7 +191,7 @@ footer .footer-col {
 }
 
 .page-desc {
-  font-family: Lato;
+  font-family: InterUI;
   font-size: 12px;
   font-weight: 500;
   font-stretch: normal;
