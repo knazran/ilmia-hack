@@ -16,9 +16,9 @@ def home(request):
 
 def survey(request):
     context = {
-        'form1': SurveyFormStepOne,
-        'form2': SurveyFormStepTwo,
-        'form3': SurveyFormStepThree
+        'form1' : SurveyFormStepOne,
+        'form2' : SurveyFormStepTwo,
+        'form3' : SurveyFormStepThree
     }
     template = 'survey.html'
     return render(request, template, context)
