@@ -30,7 +30,9 @@
         Average time to secure a job after graduation
       </p>
       <p class="text-2xl text-bold text-black">
-        2 months
+        {% for key, values in time_to_get_work.items %}
+		{{ values|stringformat:"d%%" }} took {{key}} to obtain a job
+		{% endfor %}
       </p>
       <!-- <canvas class="w-full h-64" id="myChart"></canvas> -->
     </div>

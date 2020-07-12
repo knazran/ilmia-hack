@@ -63,7 +63,7 @@ def results(request):
         top_5_industries_labels = list(df_fresh_grad['msic1'].value_counts(1)[:5].keys())
         top_5_industries_values = list(df_fresh_grad['msic1'].value_counts(1).round(3)[:5].values * 100)
 
-        time_to_get_work = df_fresh_grad['time_to_obtain_work'].value_counts(1)[[0]].to_dict()
+        time_to_get_work = (df_fresh_grad['time_to_obtain_work'].value_counts(1) * 100 )[[0]].to_dict()
         salary_range = (df_fresh_grad['monthly_income'].value_counts(1)*100)[[0]].to_dict()
         
     context = {
