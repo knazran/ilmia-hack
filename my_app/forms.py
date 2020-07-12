@@ -3,7 +3,11 @@ from django import forms
 # Form styling
 # replace this with your CSS classes later
 css_class = "form-control appearance-none w-full bg-gray-200 border border-gray-200 text-black rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-
+nec1_course =['Social Sciences, Business and Law', 'Health and Welfare',
+       'Engineering, Manufacturing and Construction',
+       'Sciences, Mathematics and Computing', 'Education',
+       'Arts and Humanities', 'Services', 'Agriculture and Veterinary',
+       'General Programmes']
 
 class SurveyFormStepOne(forms.Form):
     course_of_study = forms.ChoiceField(label=False, widget=forms.Select(
@@ -14,6 +18,8 @@ class SurveyFormStepOne(forms.Form):
         super(SurveyFormStepOne, self).__init__(*args, **kwargs)
         self.fields['course_of_study'].choices = [
             ('Computer Science', 'Computer Science'), ('Economics', 'Economics')]
+        nec1 = [(item, item) for item in nec1_course]
+        self.fields['course_of_study'].choices = self.fields['course_of_study'].choices + nec1
 
 
 class SurveyFormStepTwo(forms.Form):

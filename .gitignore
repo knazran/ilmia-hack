@@ -3,3 +3,4 @@ __pycache__/
 migrations/
 .vscode/
 .DS_Store
+my_app/static/data/

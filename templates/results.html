@@ -1,16 +1,105 @@
-{% extends "base.html" %}
-
-{% block title %}
+{% extends "base.html" %} {% block title %}
 <title>Contact</title>
-{% endblock %}
+{% endblock %} {% block core %} {{salary_data | json_script:"salary_data"}}
+<div class="container py-8 h-full md:max-w-sm">
+  <div class="flex flex-col justify-between">
+    <div>
+      <p class="text-4xl text-center text-bold text-blue-800">
+        Here is your results!
+      </p>
+    </div>
+    <div class="my-4">
+      <p class="text-lg text-semibold text-black">
+        Average Salary for {{course}} graduates
+      </p>
+      <p class="text-2xl text-bold text-black">
+        RM {{average_salary}} per month
+      </p>
+    </div>
+    <div class="my-4">
+      <p class="text-lg text-semibold text-black">
+        Salary Range of your peers
+      </p>
+      <canvas class="w-full" height="375" id="salaryChart"></canvas>
+    </div>
+    <div class="my-4">
+      <p class="text-lg text-semibold text-black">
+        Average time to secure a job after graduation
+      </p>
+      <p class="text-2xl text-bold text-black">
+        2 months
+      </p>
+      <!-- <canvas class="w-full h-64" id="myChart"></canvas> -->
+    </div>
+    <div class="my-4">
+      <p class="text-lg text-semibold text-black">
+        Top 5 Industries for {{course}} graduates
+      </p>
+	  <!-- {% for industry, values in top_5_industries.items %}
+	  {{industry}}
+	  {{values}}
+	  {% endfor %} -->
+      <canvas class="w-full h-64" id="industryChart"></canvas>
+    </div>
+    <div>
+      <a
+        class="w-full my-12 mx-auto flex items-center"
+        href="{% url 'skillgap' %}"
+      >
+        <button
+          class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2"
+        >
+          Find out more
+        </button>
+      </a>
+    </div>
+  </div>
 
-{% block core %}
-<div class="container py-8 h-full">
-	<div class="flex flex-col justify-between">
-		<p class="text-4xl text-center text-bold text-blue-800">Here is your results!</p>
-		<a class="w-full my-12 mx-auto flex items-center" href="{% url 'skillgap' %}">
-			<button class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2">Find out more</button>
-		</a>
-	</div>
+  <script>
+        var ctx = document.getElementById('industryChart').getContext('2d');
+        var myChart = new Chart(ctx, {
+          type: 'horizontalBar',
+          data: {
+            labels: {{top_5_industries_labels|safe}},
+            datasets: [
+              {
+                label: 'Top 5 Industries',
+                data: {{top_5_industries_values|safe}},
+                borderWidth: 1,
+              },
+            ],
+          },
+          options: {
+			plugins: {
+				colorschemes: {
+					scheme: 'brewer.Paired12'
+				}
+			},
+            scales: {
+              yAxes: [
+                {
+                  ticks: {
+                    beginAtZero: true,
+                  },
+                },
+              ],
+            },
+          },
+        });
+
+    	var salary_ctx = document.getElementById('salaryChart').getContext('2d');
+        console.log({{ salary_chart_payload|safe }})
+        var myDoughnutChart = new Chart(salary_ctx, {
+          type: 'doughnut',
+          data: {{salary_chart_payload | safe}},
+    	  options: {
+    		plugins: {
+				colorschemes: {
+					scheme: 'brewer.Paired12'
+				}
+			}
+    	  }
+        });
+  </script>
+  {% endblock %}
 </div>
-{% endblock %}
