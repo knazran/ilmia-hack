@@ -1,8 +1,8 @@
 from django import forms
 
 # Form styling
-# replace this with your CSS classes later
-css_class = "form-control appearance-none w-full bg-gray-200 border border-gray-200 text-black rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+# replace this with your CSS classes later appearance-none
+css_class = "form-control  w-full bg-gray-200 border border-gray-200 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500 survey-selector"
 nec1_course =['Social Sciences, Business and Law', 'Health and Welfare',
        'Engineering, Manufacturing and Construction',
        'Sciences, Mathematics and Computing', 'Education',
