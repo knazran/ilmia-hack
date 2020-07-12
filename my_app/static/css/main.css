@@ -67,7 +67,8 @@ footer .footer-col {
   --bg-opacity: 1;
   background-color: #38b553;
   background-color: rgba(56, 181, 83, var(--bg-opacity));
-  width: -webkit-fill-available !important;
+  /* width: -webkit-fill-available !important; */
+  width: inherit !important;
 }
 
 .logo {
@@ -196,6 +197,23 @@ footer .footer-col {
   height: 1px;
   border: solid 1px #e0e0e0;
   margin: 8px 0;
+}
+
+/*--------------------------------------------- Survey Styling*/
+.survey-margin {
+  margin: 0 1.5rem !important;
+}
+
+.survey-caption {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  color: #0d4a15;
+  text-align: center;
+}
+
+.survey-selector {
+  border-radius: 8px !important;
+  border-color: #8d8e97 !important;
 }
 
 /*--------------------------------------------- General Styling*/
@@ -328,5 +346,23 @@ footer .footer-col {
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;  
+  -webkit-box-orient: vertical;
+}
+
+select {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA4Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTYuMzcxIDcuNzQ0bC02LjEyLTYuMjNjLS4zMzUtLjM2Mi0uMzM1LS45MTcgMC0xLjI1OC4zMzYtLjM0MS44OC0uMzQxIDEuMjM3IDBMNyA1Ljg2Nmw1LjUxMi01LjYxYy4zMzUtLjM0MS45MDEtLjM0MSAxLjIzNyAwIC4zMzUuMzQxLjMzNS44OTYgMCAxLjI1OUw3LjYwOCA3Ljc0NGMtLjMzNi4zNDEtLjg4LjM0MS0xLjIzNyAweiIgc3R5bGU9IgogICAgZmlsbDogIzczNzM3MzsiLz48L3N2Zz4=');
+  background-position:
+    calc(100% - 12px) 14px,
+    calc(100% - 20px) 14px,
+    100% 0;
+  background-size:
+    10px 10px,
+    10px 10px;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+a:hover{
+    text-decoration: none;
 }
