@@ -229,6 +229,27 @@ footer .footer-col {
   border-color: #8d8e97 !important;
 }
 
+/*--------------------------------------------- Result Styling*/
+.result-list {
+  padding: 15px 10px;
+  border-radius: 14px;
+  box-shadow: 1px 1px 13px 5px rgba(69, 69, 69, 0.1);
+  background-color: #ffffff;
+  /* display: flex; */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.result-label {
+  font-family: InterUI;
+  font-size: 20px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #0d4a15;
+}
+
 /*--------------------------------------------- General Styling*/
 @font-face {
   font-family: InterUI;
