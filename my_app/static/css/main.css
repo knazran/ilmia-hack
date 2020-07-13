@@ -77,6 +77,19 @@ footer .footer-col {
   margin: auto;
 }
 
+#desktop-message {
+  background: crimson;
+  border-radius: 17px;
+  padding: 10px;
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  #desktop-message {
+    display: block;
+  }
+}
+
 /*--------------------------------------------- Mentor page Styling*/
 .top-gradient {
   width: 100%;
@@ -350,19 +363,14 @@ footer .footer-col {
 }
 
 select {
-  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA4Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTYuMzcxIDcuNzQ0bC02LjEyLTYuMjNjLS4zMzUtLjM2Mi0uMzM1LS45MTcgMC0xLjI1OC4zMzYtLjM0MS44OC0uMzQxIDEuMjM3IDBMNyA1Ljg2Nmw1LjUxMi01LjYxYy4zMzUtLjM0MS45MDEtLjM0MSAxLjIzNyAwIC4zMzUuMzQxLjMzNS44OTYgMCAxLjI1OUw3LjYwOCA3Ljc0NGMtLjMzNi4zNDEtLjg4LjM0MS0xLjIzNyAweiIgc3R5bGU9IgogICAgZmlsbDogIzczNzM3MzsiLz48L3N2Zz4=');
-  background-position:
-    calc(100% - 12px) 14px,
-    calc(100% - 20px) 14px,
-    100% 0;
-  background-size:
-    10px 10px,
-    10px 10px;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNCA4Ij48cGF0aCBmaWxsPSJjdXJyZW50Q29sb3IiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZD0iTTYuMzcxIDcuNzQ0bC02LjEyLTYuMjNjLS4zMzUtLjM2Mi0uMzM1LS45MTcgMC0xLjI1OC4zMzYtLjM0MS44OC0uMzQxIDEuMjM3IDBMNyA1Ljg2Nmw1LjUxMi01LjYxYy4zMzUtLjM0MS45MDEtLjM0MSAxLjIzNyAwIC4zMzUuMzQxLjMzNS44OTYgMCAxLjI1OUw3LjYwOCA3Ljc0NGMtLjMzNi4zNDEtLjg4LjM0MS0xLjIzNyAweiIgc3R5bGU9IgogICAgZmlsbDogIzczNzM3MzsiLz48L3N2Zz4=");
+  background-position: calc(100% - 12px) 14px, calc(100% - 20px) 14px, 100% 0;
+  background-size: 10px 10px, 10px 10px;
   background-repeat: no-repeat;
   -webkit-appearance: none;
   -moz-appearance: none;
 }
 
-a:hover{
-    text-decoration: none;
+a:hover {
+  text-decoration: none;
 }

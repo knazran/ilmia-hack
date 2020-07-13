@@ -6,7 +6,7 @@
 
 {% block core %}
 <!-- Modal -->
-<div class="modal fade" id="webMessage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+<!-- <div tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 	  <div class="modal-content">
 		<div class="modal-header">
@@ -20,15 +20,16 @@
 		</div>
 	  </div>
 	</div>
-  </div>
+  </div> -->
 
 <div class="container p-6 h-full">
 	<video autoplay muted loop id="homeVideo">
 		{% load static %}
-		<source src="{% static 'asset/bg_video.mp4' %}" type="video/mp4">
+		<source src="{% static 'asset/bg_video3.mp4' %}" type="video/mp4">
 		Your browser does not support HTML5 video.
 	</video>
 	<div class="bg-content flex flex-col justify-between">
+		<span id="desktop-message" class="text-center">Best view with mobile! <br> While this can be view in any device but please view this in a mobile device for superior experience.</span>
 		<img class="logo" src="{% static 'asset/logo2.png' %}">
 		<p class="text-4xl text-center text-bold text-white-800">Connecting to Your Future</p>
 		<a class="w-full my-12 mx-auto flex items-center" href="{% url 'survey' %}" style="max-width: 640px;">
@@ -36,7 +37,7 @@
 		</a>
 	</div>
 </div>
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	var isMobile = false; //initiate as false
 	// device detection
 	if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|ipad|iris|kindle|Android|Silk|lge |maemo|midp|mmp|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(navigator.userAgent) 
@@ -48,5 +49,5 @@
 			$('#webMessage').modal('show');
 		});
 	}
-</script>
+</script> -->
 {% endblock %}
