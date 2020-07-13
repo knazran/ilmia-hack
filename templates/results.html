@@ -1,43 +1,45 @@
 {% extends "base.html" %} {% block title %}
-<title>Contact</title>
+<title>Result</title>
 {% endblock %} {% block core %} {{salary_data | json_script:"salary_data"}}
-<div class="container py-8 h-full md:max-w-sm">
-  <div class="flex flex-col justify-between">
-    <div>
-      <p class="text-4xl text-center text-bold text-blue-800">
-        Here is your results!
-      </p>
-    </div>
-    <div class="my-4">
-      <p class="text-lg text-semibold text-black">
+<div class="theme-background"></div>
+<div class="container h-full position"  style="padding: 0;">
+  <div class="m-6">
+		<div class="page-title">Results</div>
+		<div class="page-desc">This is where you stand compared to someone that had been through the same.</div>
+	</div>
+  <div class="content-bg flex flex-col justify-between p-6 text-center">
+    <div class="result-list">
+      <p class="result-label">
         For {{course}} graduates in {{location}}
       </p>
+      <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_OdVhgq.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin:auto;"  loop  autoplay></lottie-player>
       <p class="mt-2 text-2xl text-bold text-black">
-		{% for key, values in salary_range.items %}
-		{{ values|stringformat:"d%%" }} earn {{key}} per month
+		<span class="page-title">{% for key, values in salary_range.items %}
+		{{ values|stringformat:"d%%" }}</span> earn <span class="page-title">{{key}}</span> per month
 		{% endfor %}
         <!-- RM {{average_salary}} per month -->
       </p>
     </div>
-    <div class="my-4">
-      <p class="text-lg text-semibold text-black">
+    <div class="result-list">
+      <p class="result-label">
         Salary Range of your peers
       </p>
       <canvas class="w-full" height="375" id="salaryChart"></canvas>
     </div>
-    <div class="my-4">
-      <p class="text-lg text-semibold text-black">
+    <div class="result-list">
+      <p class="result-label">
         Average time to secure a job after graduation
       </p>
+      <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_Zl4Ecg.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px; margin:auto;"  loop  autoplay></lottie-player>
       <p class="text-2xl text-bold text-black">
-        {% for key, values in time_to_get_work.items %}
-		{{ values|stringformat:"d%%" }} took {{key}} to obtain a job
+        <span class="page-title">{% for key, values in time_to_get_work.items %}
+		{{ values|stringformat:"d%%" }}</span> took <span class="page-title">{{key}}</span> to obtain a job
 		{% endfor %}
       </p>
       <!-- <canvas class="w-full h-64" id="myChart"></canvas> -->
     </div>
-    <div class="my-4">
-      <p class="text-lg text-semibold text-black">
+    <div class="result-list">
+      <p class="result-label">
         Top 5 Industries for {{course}} graduates
       </p>
 	  <!-- {% for industry, values in top_5_industries.items %}
@@ -52,7 +54,7 @@
         href="{% url 'skillgap' %}"
       >
         <button
-          class="bg-blue-500 text-white rounded-full text-md mx-auto w-2/3 py-2"
+          class="home-btn shadow-dreamy text-white rounded-full text-md mx-auto w-2/3 p-2"
         >
           Find out more
         </button>
