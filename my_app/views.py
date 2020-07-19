@@ -5,7 +5,11 @@ import pandas as pd
 import json
 
 # Global context to read data into pandas
-df_tracer = pd.read_csv('my_app/static/data/7_tracer_study.csv')
+df_tracer = pd.read_csv('my_app/static/data/7_tracer_study_short.csv')
+df_vacancy = pd.read_csv('my_app/static/data/2_job_vacancy_group.csv')
+# df_tracer = pd.read_csv('https://ilmiahack2020.s3-ap-southeast-1.amazonaws.com/7_tracer_study.csv')
+# df_tracer = pd.read_csv('https://ilmiahack2020.s3-ap-southeast-1.amazonaws.com/7_tracer_study_short.csv')
+# df_vacancy = pd.read_csv('https://ilmiahack2020.s3-ap-southeast-1.amazonaws.com/2_job_vacancy_group.csv')
 
 
 def home(request):
@@ -52,6 +56,7 @@ def results(request):
             df_fresh_grad = df_tracer.query("nec1_desc=='{}' & age < 25 & working_state=='{}'".format(course, location))
             print('asdasda sc')
 
+        # Salary data
         salary_data = df_fresh_grad['monthly_income']\
             .value_counts(1).round(3)
         salary_chart_payload = {
@@ -60,6 +65,11 @@ def results(request):
             }],
             'labels': list(salary_data.keys())
         }
+
+        industry = df_fresh_grad['nec3_desc'].unique()
+        salary_number_range = df_vacancy[(df_vacancy['nec_desc'].isin(industry)) & (df_vacancy['state']==location)].mean()[['min_salary','max_salary']].round(0).to_dict()
+
+        # Industry Data
         top_5_industries_labels = list(df_fresh_grad['msic1'].value_counts(1)[:5].keys())
         top_5_industries_values = list(df_fresh_grad['msic1'].value_counts(1).round(3)[:5].values * 100)
 
@@ -71,6 +81,7 @@ def results(request):
         "average_salary": 3000,
         "salary_chart_payload": salary_chart_payload,
         "salary_range": salary_range,
+        "salary_number_range": salary_number_range,
         "top_5_industries_labels": top_5_industries_labels,
         "top_5_industries_values": top_5_industries_values,
         "location": location,
